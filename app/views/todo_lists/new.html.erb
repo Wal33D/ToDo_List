@@ -1,0 +1,42 @@
+<%= form_for(@todo_list) do |f| %>
+<% if @todo_list.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@todo_list.errors.count, "error") %> prohibited this todo_list from being saved:</h2>
+  <ul>
+    <% @todo_list.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="block" style = "background:none;">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="clear-form no-border">
+          <form>
+            <div class="form-heading">
+              <h3 class="header">Create New ToDo List</h3>
+              <hr>
+            </div>
+            <div class="form-body">
+              <div class="field">
+                <%= f.label :title, :class => "form-label" %><br>
+                <%= f.text_field :title, :class => "input-block-level" %>
+              </div>
+              <div class="field">
+                <%= f.label :description, :class => "form-label" %><br>
+                <%= f.text_area :description, :class => "input-block-level" %>
+              </div>
+            </div>
+            <div class="form-footer">
+              <button class="btn btn-large btn-green btn-block" type="submit">Create List</button> 
+              <% end %>			
+              <p><%= link_to 'Back', todo_lists_path %></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

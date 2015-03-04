@@ -1,0 +1,30 @@
+<div class="container">
+     <div class="clear-form no-border">
+        <form>
+          <div class="form-heading">
+            <span><h2 class="header"><%= current_user.first_name %>'s ToDo Lists</h2></span>
+            <hr>
+          </div>
+       
+          <div class="form-body" >
+            <% @todo_lists.each do |todo_list| %>
+            <div class="todo_list" id="<%= dom_id(todo_list) %>" >
+              <h2><%= todo_list.title %></h2>
+              <p><%= todo_list.description %></p>
+              <%= link_to "List Items", todo_list_todo_items_path(todo_list), :class => "btn btn-fb"  %>
+              <%= link_to 'Show', todo_list, :class => "btn btn-blue"  %>
+              <%= link_to 'Edit', edit_todo_list_path(todo_list), :class => "btn btn-google"  %>
+              <%= link_to 'Destroy', todo_list, :class => "btn btn-red" , method: :delete, data: { confirm: 'Are you sure?' } %>
+              <br class="clear" />
+            </div>
+            <% end %>
+          </div>
+          <div class="form-footer">
+           <hr>
+           <span><%= link_to 'New Todo list', new_todo_list_path, :class => "btn btn-large btn-blue btn-block" %></span>
+               
+          </div>
+        </form>
+
+    </div>
+
