@@ -6,7 +6,7 @@
             <hr>
           </div>
        
-          <div class="form-body" >
+          <div class="form-body" style ="width:100% !important;" >
             <% @todo_lists.each do |todo_list| %>
             <div class="todo_list" id="<%= dom_id(todo_list) %>" >
               <h2><%= todo_list.title %></h2>
