@@ -10,7 +10,6 @@
  *
  *= require_self
  *= bootstrap
- *= login
  *= require_tree .
  */
 div.alert {
@@ -23,5 +22,5 @@ div.flash.notice  { padding:2px; padding-left:8px; border: 4px solid #2E9AFE;  c
 
 .clear { clear: both; }
 body{
-background-image: url(http://www.techandall.com/wp-content/uploads/2013/08/bg9.jpg) !important;
+/*background-image: url(bg9.jpg) !important;*/
 }
