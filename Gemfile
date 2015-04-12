@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 gem 'rails', '4.0.1'
 gem 'bcrypt-ruby', '~> 3.1.2'
-gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -10,8 +9,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
-gem "bootstrap"
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'sass-rails', '>= 3.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
