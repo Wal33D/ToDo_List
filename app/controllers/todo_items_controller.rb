@@ -7,6 +7,7 @@ class TodoItemsController < ApplicationController
 
   def new
     @todo_item = @todo_list.todo_items.new
+    
   end
 
   def create

@@ -1,6 +1,18 @@
-<h1>Editing todo_list</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @todo_list %> |
-<%= link_to 'Back', todo_lists_path %>
+<header class="header">
+	<div class="row">
+		<div class="small-10 small-centered large-6 large-centered columns text-center">
+			<h1>Editing Todo List</h1>
+			<hr>
+		</div>
+	</div>
+</header>
+<section>
+	<div class="row">
+		<div class="small-10 small-centered large-6 large-centered columns">
+			<%= render 'form' %>
+			<%= link_to 'Show', @todo_list, class: 'tiny button radius secondary' %> |
+			<%= link_to 'Back', todo_lists_path, class: 'tiny button radius secondary' %>
+		</div>
+	</div>
+</section>
