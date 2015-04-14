@@ -1,6 +1,6 @@
 <%= form_for(@todo_list) do |f| %>
 <% if @todo_list.errors.any? %>
-<div id="error_explanation">
+<div class="error alert flash">
   <h2><%= pluralize(@todo_list.errors.count, "error") %> prohibited this todo_list from being saved:</h2>
   <ul>
     <% @todo_list.errors.full_messages.each do |msg| %>
@@ -20,31 +20,29 @@
             <form class="form-inline">
                 <div class="form-group">
                       <div class="input-group">
-                        <div class="input-group-addon">Title</div>
+                        <div class="input-group-addon addon-green">Title</div>
                          <%= f.text_field :title, :class => "form-control", :placeholder=>"Example: Grocery List" %>
-                        <div class="input-group-addon"></div>
+                        <div class="input-group-addon addon-green"></div>
                       </div>
                     </div>
                 <div class="form-group">
-                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-                      <div class="input-group">
-                        <div class="input-group-addon">Description</div>
+                      <div class="input-group horz">
+                        <div class="input-group-addon horz-addon">Description</div>
 
-                         <%= f.text_area :description,  :rows=>"3", :class => " well form-control" %>
+                         <%= f.text_area :description,  :rows=>"5", :class => "  form-control" %>
                     
-                        <div class="input-group-addon"></div>
+                        <div class="input-group-addon horz-addon"></div>
                       </div>
                     </div>
             </div>
                <hr>
-            <center><div class="form-footer">
-              <button class="btn btn-lg btn-primary create-button" type="submit">Create List</button> 
-              <%= link_to 'Cancel', todo_lists_path,:class => "btn btn-lg btn-danger create-button" %>
-              <% end %>   
+            <center>
+              <div class="form-footer">
+                <button class="btn btn-lg btn-primary create-button" type="submit">Create List</button> 
+                <%= link_to 'Cancel', todo_lists_path,:class => "btn btn-lg btn-danger create-button" %>
+                <% end %>  
+              </div>
               </center>  
-            
-       
-            </div>
           </form>
             </div> 
           </div>

@@ -18,6 +18,5 @@
 //= require_tree .
 
 $( document ).ready(function() {
-	$('.flash').delay( 1100 ).fadeOut( 700 );
+	$('.flash').delay( 1300 ).fadeOut( 800 );
 });
- 

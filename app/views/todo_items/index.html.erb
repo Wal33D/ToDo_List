@@ -1,33 +1,57 @@
-<h1><%= @todo_list.title %></h1>
+<%= form_for(@todo_list) do |f| %>
+ <div class = "item">
+<div class = "create">
+            <div class="form-heading">
+              <h2 class="header"><%= @todo_list.title %></h2>
+              <hr>
+            </div>
+            <div class="form-body">
+            <form class="form-inline">
+                <div class="form-group">
+                      <div class="input-group horz">
+                        <table class=" table todo_items-table">
+                          <thead class="horz-blue blue">
+                            <tr>
+                              <th width="25%">Completed?</th>
+                              <th width="65%">Content</th>
+                              <th width="10%">Functions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          <% @todo_list.todo_items.each do |todo_item| %>
+                          <tr id="<%= dom_id(todo_item) %>">
+                              <% if todo_item.completed? %>
+                              <td class="yellow">
+                              <h4> <%= todo_item.completed_at %></h4>
+                              <% else %>
+                               <td class="blue">
+                                <h4><%= link_to "Mark as Complete?", complete_todo_list_todo_item_path(todo_item), :class=>"mark" , method: :patch %></h4>
+                              <% end %>
+                            </td>
+                            <td class ="well">
+                              <h3><%= todo_item.content %></h3>
+                            </td>
+                            <td class="list-td">
+                              <%= link_to "Edit", edit_todo_list_todo_item_path(todo_item), :class=>"yellow btn btn-sm btn-warning " %>
+                              <%= link_to "Delete", todo_list_todo_item_path(todo_item), method: :delete, data: { confirm: "Are you sure?" }, :class=>"btn btn-sm btn-danger " %>
+                            </td>
+                          </tr>
+                          <% end %>
+                          </tbody>
+                        </table> 
+                        <div class="input-group-addon horz-blue blue"></div>
+                      </div>
+                    </div>
+            </div>
+               <hr>
+            <center>
+              <div class="form-footer">
+                <%= link_to "New Todo Item", new_todo_list_todo_item_path, :class => "btn btn-lg btn-primary create-button" %>
+                <%= link_to 'Back', todo_lists_path,:class => "btn btn-lg btn-danger create-button" %>
 
-<table class="todo_items">
-  <thead>
-    <tr>
-      <th width="25%">Completed?</th>
-      <th width="65%">Content</th>
-      <th width="10%">Functions</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @todo_list.todo_items.each do |todo_item| %>
-  <tr id="<%= dom_id(todo_item) %>">
-    <td>
-      <% if todo_item.completed? %>
-        <%= todo_item.completed_at %>
-      <% else %>
-        <%= link_to "Mark Complete", complete_todo_list_todo_item_path(todo_item), method: :patch %>
-      <% end %>
-    </td>
-    <td><%= todo_item.content %></td>
-    <td>
-      <%= link_to "Edit", edit_todo_list_todo_item_path(todo_item) %>
-      <%= link_to "Delete", todo_list_todo_item_path(todo_item), method: :delete, data: { confirm: "Are you sure?" } %>
-    </td>
-  </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<p>
-  <%= link_to "New Todo Item", new_todo_list_todo_item_path %>
-</p>
+                <% end %>  
+              </div>
+              </center>  
+          </form>
+            </div> 
+</div>

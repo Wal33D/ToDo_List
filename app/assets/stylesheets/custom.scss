@@ -177,6 +177,48 @@ hr{
 }
 
 }
+
+.blue{
+      background-color: #428bca !important;
+      color:white !important;
+      font-weight:bold !important;
+      padding: 10px !important;
+
+}
+.yellow{
+      background-color: rgb(255, 196, 13) !important;
+      color:white !important;
+      font-weight:bold !important;
+      padding:8px !important;     
+}
+horz-blue{
+      background-color: #428bca !important;
+      color:white !important;
+      font-weight:bold !important;
+      font-weight:bold !important;
+
+}
+.mark{
+  color:white;
+  background:none !important;
+  font-weight:bold !importantl
+}
+.mark:hover{
+  text-decoration:none;
+   color:rgb(46, 204, 113) !important;
+
+}
+
+.btn-sm {
+  width:100%;
+  outline:none;
+  margin:0px !important;
+  font-weight:bold !important;
+}
+.todo_items-table{
+  width:100% !important;  
+}
+
 #no-lists-header{
   text-align:center;
 }
@@ -187,6 +229,24 @@ hr{
   h3{
     line-height:10px !important;
     }
+}
+.addon-green{
+  background-color:rgb(46, 204, 113) !important;
+  border:solid rgba(46, 204, 113,0.5) 1.5px !important;
+  color:white !important;
+  font-weight:bold !important;
+}
+
+.horz, .horz-addon{
+  display:inline-block !important;
+  float:none !important;
+  width:100% !important;
+}
+.horz-addon{
+   background-color:rgb(46, 204, 113) !important;
+  border:solid rgba(46, 204, 113,0.5) 1.5px !important;
+   color:white !important;
+  font-weight:bold !important;
 }
 
 .alert {
