@@ -124,6 +124,7 @@ hr{
   padding:30px;
   text-align:center;
 
+
 }
 .margin{
   margin-top:3px;
@@ -132,6 +133,45 @@ hr{
 #check{
   float:left;
   text-align:left;
+}
+
+.no-lists{
+  width:100%;
+  height:60%;
+  border: solid #428bca 10px;
+  display:inline-block;
+  margin:auto;
+  
+  .tile-large{
+  position: relative;
+ 
+  }
+  .thumbnail{
+     width:40% !important;
+     height:40% !important;     
+     margin-left: 30%;
+     margin-right: 30%;
+     img{
+     width:inherit;
+     padding:20px;
+     }
+  }
+  .tile-blue{
+  opacity:1 !important;
+  background-color: #428bca !important;
+}
+  .tile-blue:hover{
+  opacity:0.8 !important;
+}
+
+}
+#no-lists-header{
+  text-align:center;
+}
+
+.alert-small{
+  margin:1px !important;
+  padding:1px !important;
 }
 
 @media screen and (min-width: 600px) {
@@ -144,7 +184,6 @@ hr{
     .item{
     padding-bottom:5px;
     }
-
 
 }
 

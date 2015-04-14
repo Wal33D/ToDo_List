@@ -1,4 +1,11 @@
 <% if @todo_lists.present? %>
+      <div id ="no-lists-header" class="alert alert-success alert-small">
+         <h2>Hello, <%= current_user.first_name %> <%= current_user.last_name %></h2>
+      </div>
+
+      <div id ="no-lists-header" class="alert alert-info alert-small">
+         <h2>You have <%= @todo_lists.count %> ToDo Lists</h2>
+      </div>
 
 <div class="todo">
      <div class="clear-form no-border">
@@ -23,9 +30,9 @@
                <h1><%= todo_list.title %></h1>
                <h3><%= todo_list.description %></h3>
                <hr>
-               <h4 id = "items">Items: <%= todo_list.todo_items.count %></h4>
-               <h4 id = "completed">Completed Items: <%= completed %></h4>
-               <h4 id = "incomplete">Incomplete Items: <%= incomplete %></h4>
+               <h4 id = "items">Tasks: <%= todo_list.todo_items.count %></h4>
+               <h4 id = "completed">Completed Tasks: <%= completed %></h4>
+               <h4 id = "incomplete">Incomplete Tasks: <%= incomplete %></h4>
             </div> 
               <div class = "options">
                <%= link_to  todo_list do%>
@@ -49,18 +56,30 @@
           <div class="form-footer">
            <hr>
            <span><%= link_to 'New Todo list', new_todo_list_path, :class => "btn btn-large btn-blue btn-block" %></span>
-               
           </div>
         </form>
-
     </div>
+  <% else %> 
+  <center>
+      <div class = "no-lists">
+      <div id ="no-lists-header" class="alert alert-success">
+         <h1>Hello, <%= current_user.first_name %> <%= current_user.last_name %>
+</h1>
+      </div>
 
-<% else %> 
-   You have no lists
- <div class="form-footer">
-           <hr>
-           <span><%= link_to 'New Todo list', new_todo_list_path, :class => "btn btn-large btn-blue btn-block" %></span>
-               
-          </div>
-        </form>
-<% end %> 
+      <div id ="no-lists-header" class="alert alert-info">
+         <h1>You have 0 ToDo Lists</h1>
+      </div>
+
+
+      <%= link_to new_todo_list_path do%>
+        <div class="thumbnail tile tile-large tile-blue"> 
+              <h1>New</h1>
+              <h1>Todo List</h1>
+          <img src="newlist.png">
+        </div>
+
+      <% end %>
+      </div>
+      </center>
+  <% end %> 
