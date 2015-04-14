@@ -135,6 +135,18 @@ hr{
   text-align:left;
 }
 
+.title-description{
+  color:white;
+  margin:0px !important;
+  padding:0px !important;
+   h1, h3{
+    color: #428bca !important;
+    -webkit-text-fill-color: #428bca !important; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px !important;
+    -webkit-text-stroke-color: #428bca !important;
+   }
+}
+
 .no-lists{
   width:100%;
   height:60%;
@@ -174,6 +186,33 @@ hr{
   padding:1px !important;
 }
 
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+}
+
+.flash{
+font-size:2.5vmin;
+  border: none;
+  color: white;
+}
+
+.success{
+  background-color: #428bca; 
+}
+
+.notice{
+  background-color: #2ecc71;
+}
+
+.create h2{
+  color:  #428bca;
+}
+.create-button{
+  width:49% !important;
+}
 @media screen and (min-width: 600px) {
 
     .options{

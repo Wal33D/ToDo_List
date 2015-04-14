@@ -16,3 +16,7 @@
 //= require bootstrap-sprockets
 
 //= require_tree .
+
+$( document ).ready(function() {
+	$('.flash').delay( 800 ).fadeOut( 400 );
+});
