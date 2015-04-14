@@ -213,6 +213,13 @@ font-size:2.5vmin;
 .create-button{
   width:49% !important;
 }
+
+#hr-small{
+padding:0px;  
+margin:0px;
+margin-top:8px;
+}
+
 @media screen and (min-width: 600px) {
 
     .options{
@@ -220,8 +227,10 @@ font-size:2.5vmin;
       padding-top:12px;
       width:42%;
     }
-    .item{
-    padding-bottom:5px;
+  
+    .item, .list{
+    
+      padding-bottom:5px;
     }
 
 }
@@ -247,11 +256,20 @@ font-size:2.5vmin;
       padding-top:0px;
 
       .block{
-        line-height: 40px;
+        line-height: 30px;
         width:50%;
       }
     }
-
+   .container, .content{
+      width:100% !important;
+      padding:0px !important;
+      margin:0px !important;
+    }
+    .item, .list{
+      width:100%;
+      padding:0px;
+      padding-bottom:5px;
+    }
      .signin{
      padding:8px;
        width:100%;

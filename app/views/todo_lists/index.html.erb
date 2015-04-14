@@ -1,10 +1,10 @@
 <% if @todo_lists.present? %>
       <div id ="no-lists-header" class="alert alert-success alert-small">
-         <h2>Hello, <%= current_user.first_name %> <%= current_user.last_name %></h2>
+         <h3>Hello, <%= current_user.first_name %> <%= current_user.last_name %></h3>
       </div>
 
       <div id ="no-lists-header" class="alert alert-info alert-small">
-         <h2>You have <%= @todo_lists.count %> ToDo Lists</h2>
+         <h3>You have <%= @todo_lists.count %> ToDo List(s)</h3>
       </div>
 
 <div class="todo">
@@ -12,7 +12,7 @@
         <form>
           <div class="form-heading">
             <!--<span><h2 class="header"><%= current_user.first_name %>'s ToDo Lists</h2></span>-->
-            <hr>
+            <hr id="hr-small">
           </div>
           <div class="list" >
             <% @todo_lists.each do |todo_list| %>
