@@ -6361,7 +6361,7 @@ a.fa-links:focus {
   height: 310px;
   width: 310px;
 }
-.alert {
+.alert .flash{
   border: none;
   color: white;
 }
@@ -6379,7 +6379,7 @@ a.fa-links:focus {
 .alert-warning {
   background-color: #f1c40f;
 }
-.alert-danger {
+.alert-danger, .error {
   background-color: #e74c3c;
 }
 .checkbox {

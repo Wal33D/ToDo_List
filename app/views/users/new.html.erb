@@ -1,6 +1,6 @@
 <%= form_for(@user) do |f| %>
 <% if @user.errors.any? %>
-<div id="error_explanation">
+<div id="error_explanation", class=" alert error">
   <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
   <ul>
     <% @user.errors.full_messages.each do |msg| %>
@@ -9,41 +9,32 @@
   </ul>
 </div>
 <% end %>
-<div class="block" style = "background:none;">
-  <div class="container">
-    <div class="row">
-      <div class="span12">
-        <div class="clear-form no-border">
+<div class="signin">
+ 
           <form>
             <div class="form-heading">
               <h3 class="header">Create an account</h3>
               <hr>
             </div>
             <div class="form-body">
-              <span class="form-label">First Name</span>
-              <%= f.text_field :first_name, :class => "input-block-level" %>
-              <span class="form-label">Last Name</span>
-              <%= f.text_field :last_name, :class => "input-block-level" %>
-              <span class="form-label">Email address</span>
-              <%= f.text_field :email, :class => "input-block-level" %>
-              <span class="form-label">Password</span>
-              <%= f.password_field :password, :class => "input-block-level" %>
-              <span class="form-label">Confirm password</span>
-              <%= f.password_field :password_confirmation, :class => "input-block-level" %>
+              <%= f.text_field :first_name, :id=>"inputName",:class =>"form-control margin", :placeholder =>"First Name"%>
+              <%= f.text_field :last_name, :id=>"inputName",:class =>"form-control margin", :placeholder =>"Last Name" %>
+              <%= f.text_field :email, :id=>"inputEmail",:class =>"form-control margin", :placeholder =>"Email" %>
+              <%= f.password_field :password, :id=>"inputPassword",:class =>"form-control", :placeholder =>"Password"%>
+              <%= f.password_field :password_confirmation,:id=>"inputPassword",:class =>"form-control margin" , :placeholder =>"Confirm Password" %>
+              <hr>
               <p class="highlight">
                 By clicking on the "Create an account" button below, you certify that you have read and agree to our <a href="#">terms of use</a> and <a href="">privacy policy</a>.
               </p>
             </div>
             <div class="form-footer">
-              <button class="btn btn-large btn-green btn-block" type="submit">Create an account</button> 
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Create an account</button> 
               <% end %>
+              <hr>
               <p class="center">
                 Already have an account? <a href="#">Sign In</a>.
               </p>
             </div>
           </form>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+    

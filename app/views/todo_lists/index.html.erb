@@ -1,8 +1,10 @@
+<% if @todo_list.present? %>
+
 <div class="todo">
      <div class="clear-form no-border">
         <form>
           <div class="form-heading">
-            <span><h2 class="header"><%= current_user.first_name %>'s ToDo Lists</h2></span>
+            <!--<span><h2 class="header"><%= current_user.first_name %>'s ToDo Lists</h2></span>-->
             <hr>
           </div>
           <div class="list" >
@@ -20,13 +22,14 @@
             <div class = "infos">
                <h1><%= todo_list.title %></h1>
                <h3><%= todo_list.description %></h3>
-               <h4>Number of Items: <%= todo_list.todo_items.count %></h4>
-               <h4>Number of Completed Items: <%= completed %></h4>
-               <h4>Number of Incomplete Items: <%= incomplete %></h4>
+               <hr>
+               <h4 id = "items">Items: <%= todo_list.todo_items.count %></h4>
+               <h4 id = "completed">Completed Items: <%= completed %></h4>
+               <h4 id = "incomplete">Incomplete Items: <%= incomplete %></h4>
             </div> 
               <div class = "options">
                <%= link_to  todo_list do%>
-                     <div class="block two"><p>Progress</p></div>
+                     <div class="block two"><p>Status</p></div>
                  <% end %>
                  <%= link_to  todo_list_todo_items_path(todo_list) do%>
                      <div class="block one"><p>Tasks</p></div>
@@ -52,3 +55,12 @@
 
     </div>
 
+<% else %> 
+   You have no lists
+ <div class="form-footer">
+           <hr>
+           <span><%= link_to 'New Todo list', new_todo_list_path, :class => "btn btn-large btn-blue btn-block" %></span>
+               
+          </div>
+        </form>
+<% end %> 
