@@ -22,7 +22,9 @@
                           <tr id="<%= dom_id(todo_item) %>">
                               <% if todo_item.completed? %>
                               <td class="yellow">
-                              <h4> <%= todo_item.completed_at %></h4>
+                              <h4>
+                                <%= todo_item.completed_at %>
+                              </h4>
                               <% else %>
                                <td class="blue">
                                 <h4><%= link_to "Mark as Complete?", complete_todo_list_todo_item_path(todo_item), :class=>"mark" , method: :patch %></h4>

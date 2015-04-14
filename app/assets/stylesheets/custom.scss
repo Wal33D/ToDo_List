@@ -191,6 +191,14 @@ hr{
       font-weight:bold !important;
       padding:8px !important;     
 }
+
+.green{
+      background-color:rgb(46, 204, 113)!important;
+      color:white !important;
+      font-weight:bold !important;
+      padding:8px !important;     
+}
+
 horz-blue{
       background-color: #428bca !important;
       color:white !important;
@@ -278,9 +286,29 @@ font-size:2.5vmin;
 }
 
 #hr-small{
-padding:0px;  
-margin:0px;
-margin-top:8px;
+  padding:0px;  
+  margin:0px;
+  margin-top:8px;
+}
+
+.indent{
+  margin-left:5%; 
+  list-style-type:square;
+}
+
+.hover:hover{
+  opacity:0.5;  
+
+}
+
+.no-top{
+  margin-top:0px !important;
+  padding-top:0px !important;
+  h1, h2, h3, h4{
+  line-weight:30px;
+  padding-top:5px;
+  }
+
 }
 
 @media screen and (min-width: 600px) {
