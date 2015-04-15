@@ -10,7 +10,7 @@
                 <div class="form-group">
                       <div class="input-group horz">
                         <div class="input-group-addon  yellow">Email</div>
-							<%= form_tag password_resets_path do %>
+							<%= form_tag password_resets_path, :html =>{:placeholder=>"form-control"} do %>
 							  <%= text_field_tag :email %>
                         <div class="input-group-addon  yellow"></div>
                       </div>
