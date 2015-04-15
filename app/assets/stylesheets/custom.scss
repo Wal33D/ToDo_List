@@ -32,10 +32,26 @@ body {
    }
 
 }
+
+.flash{
+  font-weight:bold !important;
+}
+
+h4#items{
+  background:rgb(46, 204, 113)!important;
+  
+}
+
+.navbar{
+  background-color: #3B7DB6 !important;  
+  opacity:1 !important;
+}
+
 hr{
 	border: 2px solid #428bca !important;
 }
-.one { background: lightgreen; border-top-left-radius: 10px; }
+.one { background: rgb(46, 204, 113)!important;
+ border-top-left-radius: 10px; }
 .two { background: lightblue; border-top-right-radius: 10px; }
 .three { background: orange; border-bottom-right-radius: 10px; }
 .four { background: red; border-bottom-left-radius: 10px; }
@@ -55,7 +71,6 @@ hr{
 
 }
 #items, #incomplete, #completed{
-
 	padding:10px;
 	color:white;
 	font-weight: bold;
@@ -149,6 +164,10 @@ hr{
    }
 }
 
+.white{
+  font-size:2em !important;
+}
+
 .no-lists{
   width:100%;
   height:60%;
@@ -160,6 +179,7 @@ hr{
   position: relative;
  
   }
+
   .thumbnail{
      width:40% !important;
      height:40% !important;     
@@ -180,6 +200,20 @@ hr{
 
 }
 
+.icon-bar{
+  background-color: white !important;  
+}
+
+.save{
+  margin-top:-25px !important;  
+  padding-top:0px !important;  
+}
+
+.reset{
+    border:10px solid black !important;
+    width:100% !important;
+}
+
 .blue{
       background-color: #428bca !important;
       color:white !important;
@@ -187,6 +221,7 @@ hr{
       padding: 10px !important;
 
 }
+
 .yellow{
       background-color: rgb(255, 196, 13) !important;
       color:white !important;

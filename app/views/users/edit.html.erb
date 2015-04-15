@@ -1,5 +1,44 @@
 <%- model_class = User -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+<div class = "item">
+<div class = "create">
+            <div class="form-heading">
+              <h2 class="header">Edit Account - <%= current_user.first_name%>
+                <%= current_user.last_name %>
+              </h2>
+              <hr>
+            </div>
+     
+            <div class="form-body">
+                <div class="form-group">
+                      <div class="input-group horz">
+                        <div class="input-group-addon  blue"></div>
+							<%= form_tag password_resets_path do %>
+							  <dl class="dl-horizontal">
+						  <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
+						  <dd><%= @user.first_name %></dd>
+						  <dt><strong><%= model_class.human_attribute_name(:last_name) %>:</strong></dt>
+						  <dd><%= @user.last_name %></dd>
+						  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+						  <dd><%= @user.email %></dd>
+						
+                        <div class="input-group-addon blue"></div>
+                      </div>
+                 </div>
+            </div>
+          
+             <%= link_to 'Save Changes', todo_lists_path,:class => "btn btn-lg btn-primary green btn-block save " %>
+               <hr>
+            <center>
+            <div class="form-actions">
+			   <%= link_to 'Back', todo_lists_path,:class => "btn btn-lg btn-warning  create-button " %>	
+			  <%= link_to t('.destroy', :value =>"Delete My Account!",:default => t("helpers.links.destroy")),
+			              user_path(@user),
+			              :method => 'delete',
+			              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+			              :class => 'btn btn-danger btn-lg  create-button' %>
+			</div>
+              </center>  
+          </form>
+            </div> 
 </div>
-<%= render :partial => 'form' %>
+<% end %>

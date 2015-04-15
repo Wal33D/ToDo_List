@@ -1,8 +1,9 @@
+
 <%= form_for(@todo_list) do |f| %>
  <div class = "item">
 <div class = "create">
             <div class="form-heading">
-              <h1 class="header" style = "color:#428bca"><%= @todo_list.title %></h1>
+              <h1 class="header" style = "color:#428bca"><%= @todo_list.title %> - Status</h1>
               <h2><%= @todo_list.description %></h2>
               <hr>
             </div>
@@ -30,7 +31,7 @@
 </table>
 <table class = "table table-bordered">
 	  <tbody>
-		<% if @todo_list.has_incomplete_items? %>
+<% if @todo_list.has_completed_items? %>
 		<th class = "green no-top">
 			<h2 style = "color:white">Complete Items:</h2>
 		</th>
