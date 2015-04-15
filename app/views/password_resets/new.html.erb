@@ -1,34 +1,10 @@
+<div class ="item">
+<h1 class="alert alert-warning">Reset Your Password</h1>
+<%= form_tag password_resets_path do %>
+  <%= label_tag :email, "Email" %>
+  <%= text_field_tag :email %>
 
-
- <div class = "item">
-<div class = "create">
-            <div class="form-heading">
-              <h2 class="header">Reset Your Password</h2>
-              <hr>
-            </div>
-            <div class="form-body">
-                <div class="form-group">
-                      <div class="input-group horz">
-                        <div class="input-group-addon  yellow">Email</div>
-							<%= form_tag password_resets_path, :html =>{:placeholder=>"form-control"} do %>
-							  <%= text_field_tag :email %>
-                        <div class="input-group-addon  yellow"></div>
-                      </div>
-                 </div>
-            </div>
-               <hr>
-            <center>
-              <div class="form-footer">
-                  <%= submit_tag "Reset Password", :class=>"btn btn-lg btn-warning create-button" %>
-                  <%= link_to 'Cancel', todo_lists_path,:class => "btn btn-lg btn-danger create-button" %>
-              </div>
-              </center>  
-          </form>
-            </div> 
-</div>
+  <br />
+  <%= submit_tag "Reset Password" %>
 <% end %>
-<style>
-input#email{
-	width:100%;
-}
-</style>
+</div>
