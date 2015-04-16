@@ -1,88 +1,107 @@
 <% if @todo_lists.present? %>
-      <div id ="no-lists-header" class="alert alert-success alert-small">
-         <h3>Hello, <%= current_user.first_name %> <%= current_user.last_name %></h3>
-      </div>
-
-      <div id ="no-lists-header" class="alert alert-info alert-small">
-         <h3>You have <%= @todo_lists.count %> ToDo List(s)</h3>
-      </div>
-
+<div id ="no-lists-header" class="alert alert-success alert-small">
+  <h3>Hello, <%= current_user.first_name %> <%= current_user.last_name %></h3>
+</div>
+<div id ="no-lists-header" class="alert alert-info alert-small">
+  <h3>You have <%= @todo_lists.count %> ToDo List(s)</h3>
+</div>
 <div class="todo">
-     <div class="clear-form no-border">
-        <form>
-          <div class="form-heading">
-            <!--<span><h2 class="header"><%= current_user.first_name %>'s ToDo Lists</h2></span>-->
-            <hr id="hr-small">
-          </div>
-          <div class="list" >
-            <% @todo_lists.each do |todo_list| %>
-
-             <% completed = 0 %>
-             <% todo_list.todo_items.each do |todo_item| %>
-               <% if todo_item.completed? %>
-                  <% completed = completed + 1 %>
-               <% end %> 
-             <% end %>
-             <% incomplete = todo_list.todo_items.count - completed %>
-
-          <div class = "item">
-            <div class = "infos">
-            <div class = "title-description">
-               <h1><%= todo_list.title %></h1>
-               <h3><%= todo_list.description %></h3>
-           </div>
-               <hr>
-               <h4 id = "items">Tasks: <%= todo_list.todo_items.count %></h4>
-               <h4 id = "completed">Completed Tasks: <%= completed %></h4>
-               <h4 id = "incomplete">Incomplete Tasks: <%= incomplete %> </h4>
-
-            </div> 
-              <div class = "options">
-               <%= link_to  todo_list do%>
-                     <div class="block two"><p>Status</p></div>
-                 <% end %>
-                 <%= link_to  todo_list_todo_items_path(todo_list) do%>
-                     <div class="block one"><p>Tasks</p></div>
-                 <% end %>
-                
-                 <%= link_to  edit_todo_list_path(todo_list) do%>
-                     <div class="block three"><p>Edit</p></div>
-                 <% end %>
-                 <%= link_to todo_list, method: :delete, data: { confirm: 'Are you sure?' } do%>
-                     <div class="block four"><p>Delete</p></div>
-                 <% end %>
-              </div> 
-            </div>
-            <% end %>
-          </div>
-
-          <div class="form-footer">
-           <hr>
-           <%= link_to 'New Todo list?', new_todo_list_path, :class => "btn btn-lg btn-primary btn-block" %>
-
-          </div>
-        </form>
+<div class="clear-form no-border">
+  <form>
+    <div class="form-heading">
+      <!--<span><h2 class="header"><%= current_user.first_name %>'s ToDo Lists</h2></span>-->
+      <hr id="hr-small">
     </div>
-  <% else %> 
-  <center>
-      <div class = "no-lists">
-      <div id ="no-lists-header" class="alert alert-success">
-         <h1>Hello, <%= current_user.first_name %> <%= current_user.last_name %>
-</h1>
-      </div>
-
-      <div id ="no-lists-header" class="alert alert-info">
-         <h1>You have 0 ToDo Lists</h1>
-      </div>
-
-
-      <%= link_to new_todo_list_path do%>
-        <div class="thumbnail tile tile-large tile-blue"> 
-              <h1>New Todo List</h1>
-          <img src="newlist.png">
-        </div>
-
+    <div class="list" >
+      <% @todo_lists.each do |todo_list| %>
+      <% completed = 0 %>
+      <% todo_list.todo_items.each do |todo_item| %>
+      <% if todo_item.completed? %>
+      <% completed = completed + 1 %>
+      <% end %> 
       <% end %>
-      </div>
-      </center>
-  <% end %> 
+      <% incomplete = todo_list.todo_items.count - completed %>
+      <fieldset class="scheduler-border item">
+        <legend class="scheduler-border">
+          <h1><%= todo_list.title %></h1>
+        </legend>
+        <div class = "infos">
+          <div class = "title-description">
+            <h3><%= todo_list.description %></h3>
+            <h4 style="color:#428bca">Created @ <%= todo_list.created_at %></h4>
+          </div>
+          <hr>
+          <%= link_to "/todo_lists/#{todo_list.id}/todo_items/new", :class=>"add-item" do %>
+          <h4 id = "items">Tasks: <%= todo_list.todo_items.count %> <%= image_tag("white-plus.png", :class=>"add") %>
+          </h4>
+          <% end %>
+          <h4 id = "completed">Completed Tasks: <%= completed %></h4>
+          <h4 id = "incomplete">Incomplete Tasks: <%= incomplete %> </h4>
+          <hr>
+        </div>
+        <div class = "options">
+          <%= link_to  todo_list do%>
+          <div class="block two">
+            <p>Status</p>
+          </div>
+          <% end %>
+          <%= link_to  todo_list_todo_items_path(todo_list) do%>
+          <div class="block one">
+            <p>Tasks</p>
+          </div>
+          <% end %>
+          <%= link_to  edit_todo_list_path(todo_list) do%>
+          <div class="block three">
+            <p>Edit</p>
+          </div>
+          <% end %>
+          <a href="#" class="block four" data-toggle="modal" data-target="#basicModal">
+            <p>Delete</p>
+          </a>
+          <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel">Delete</h4>
+                </div>
+                <div class="modal-body">
+                  <h3>Delete ToDo List and All associated Tasks?</h3>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <%= link_to todo_list, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                  <button type="button" class="btn btn-danger">Delete IT!</button>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <% end %>
+    </div>
+    <div class="form-footer">
+      <hr>
+      <%= link_to 'New Todo list?', new_todo_list_path, :class => "btn btn-lg btn-primary btn-block" %>
+    </div>
+  </form>
+</div>
+<% else %> 
+<center>
+  <div class = "no-lists item">
+    <div id ="no-lists-header" class="alert alert-success">
+      <h1>Hello, <%= current_user.first_name %> <%= current_user.last_name %></h1>
+    </div>
+    <div id ="no-lists-header" class="alert alert-info">
+      <h1>You have 0 ToDo Lists</h1>
+    </div>
+    <%= link_to new_todo_list_path do%>
+    <div class="thumbnail tile tile-large tile-blue">
+      <h1>New Todo List</h1>
+      <img src="newlist.png">
+    </div>
+    <% end %>
+  </div>
+</center>
+<% end %>

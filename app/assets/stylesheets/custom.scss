@@ -78,6 +78,7 @@ hr{
 	margin-bottom: 0;
 	padding-top:15px;
 	padding-bottom:15px;
+
 }
 
 #items{
@@ -140,7 +141,12 @@ hr{
   text-align:center;
 }
 
-
+.add{
+float:right;
+  position:inline;
+  max-width:20px;
+  padding:0px !important;
+}
 
 .margin{
   margin-top:3px;
@@ -156,11 +162,10 @@ hr{
   color:white;
   margin:0px !important;
   padding:0px !important;
+  margin-top:-5px !important;;
    h1, h3{
     color: #428bca !important;
-    -webkit-text-fill-color: #428bca !important; /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px !important;
-    -webkit-text-stroke-color: #428bca !important;
+    
    }
 }
 
@@ -308,6 +313,7 @@ font-size:2.5vmin;
 }
 
 .success{
+
   background-color: #428bca; 
 }
 
@@ -347,6 +353,14 @@ font-size:2.5vmin;
   }
 
 }
+#items:hover{
+  opacity:0.8;
+}
+.add-item:hover {
+  text-decoration:none;
+  
+}
+
 
 @media screen and (min-width: 600px) {
 
@@ -398,8 +412,8 @@ font-size:2.5vmin;
       padding:0px;
       padding-bottom:5px;
     }
-    .item{
-    border:double 8px #428bca; 
+    .item, .fieldset.scheduler-border{
+    border:double 8px #428bca !important; 
 
     }
      .signin{
@@ -407,4 +421,23 @@ font-size:2.5vmin;
        width:100%;
       }
 
+}
+fieldset.scheduler-border {
+
+  border: solid #428bca 10px;
+  display: inline-block;
+  height:auto;
+  width:100%;
+}
+
+legend.scheduler-border {
+  border:none;
+  width:auto;
+  color:#428bca;
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+}
+.not-completed-td{
+  background-color:red !important;
 }

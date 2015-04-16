@@ -41,7 +41,7 @@
             <center>
               <div class="form-footer">
                 <button class="btn btn-lg btn-primary create-button" type="submit">Save Item</button> 
-                <%= link_to 'Cancel', todo_lists_path,:class => "btn btn-lg btn-danger create-button" %>
+ 				<%=link_to_function "Cancel", "history.back()",:class => "btn btn-lg btn-danger create-button" %>
                 <% end %>  
               </div>
               </center>  

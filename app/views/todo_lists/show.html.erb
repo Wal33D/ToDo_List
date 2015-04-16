@@ -11,17 +11,39 @@
 <% if @todo_list.has_incomplete_items? %>
 	<table class = "table table-bordered">
 	  <tbody>
-		<th class = "yellow no-top">
+		<th colspan="3"class = "yellow no-top">
 			<h2 style = "color:white">Incomplete Items:</h2>
 		</th>
+		<tr>
+		 <td class = "yellow no-top">
+			<h3 style = "color:white">Task</h3>
+		</td>
+		<td class = "yellow no-top">
+			<h3 style = "color:white">Completed @</h3>
+		</td>
+		 <td class = "yellow no-top">
+			<h3 style = "color:white">Created @</h3>
+		</td>
+		</tr>
+
 		<% @todo_list.todo_items.incomplete.each do |todo_item| %>
 		<%= link_to edit_todo_list_path(todo_item) do%>
 			<tr class = "yellow no-top hover ">
 			   <td>
-			  	  <h4 class = "indent">
+			  	  <h3 >
 			  	  	<%= todo_item.content %>
-			  	  </h4>
+			  	  </h3>
 			   </td>
+			     <td class = "error">
+		  	  <h4 >
+		  	  </h4>
+		   </td>
+		      <td>
+		  	  <h4 >
+		  	  	<%= todo_item.created_at %>
+		  	  </h4>
+		   </td>
+
 			</tr>
 		<% end %>
 	<% end %>
@@ -32,14 +54,37 @@
 <table class = "table table-bordered">
 	  <tbody>
 <% if @todo_list.has_completed_items? %>
-		<th class = "green no-top">
-			<h2 style = "color:white">Complete Items:</h2>
+		<th colspan="3" class = "green no-top">
+			<h2 style = "color:white">Completed Items:</h2>
 		</th>
+		<tr>
+		 <td class = "green no-top">
+			<h3 style = "color:white">Task</h3>
+		</td>
+		<td class = "green no-top">
+			<h3 style = "color:white">Completed @</h3>
+		</td>
+		 <td class = "green no-top">
+			<h3 style = "color:white">Created @</h3>
+		</td>
+		</tr>
+
 		 <% @todo_list.todo_items.complete.each do |todo_item| %>
+		
 		<tr class = "green no-top hover ">
 		   <td>
-		  	  <h4 class = "indent">
+		  	  <h3 >
 		  	  	<%= todo_item.content %>
+		  	  </h3>
+		   </td>
+		    <td>
+		  	  <h4 >
+		  	  	<%= todo_item.completed_at %>
+		  	  </h4>
+		   </td>
+		      <td>
+		  	  <h4 >
+		  	  	<%= todo_item.created_at %>
 		  	  </h4>
 		   </td>
 		</tr>
@@ -50,7 +95,6 @@
             <hr>
             <center>
               <div class="form-footer">
-                <%= link_to 'Edit', edit_todo_list_path(@todo_list), :class=>"btn btn-lg btn-primary create-button" %>
 
                 <%= link_to 'Back', todo_lists_path,:class => "btn btn-lg btn-danger create-button" %>
                 <% end %>  
