@@ -20,3 +20,4 @@
 $( document ).ready(function() {
 	$('.flash').delay( 1300 ).fadeOut( 800 );
 });
+$(document).ready(function () { $('html, body').animate({scrollTop:0}, 100); });

@@ -28,7 +28,7 @@
         <div class = "infos">
           <div class = "title-description">
             <h3><%= todo_list.description %></h3>
-            <h4 style="color:#428bca">Created @ <%= todo_list.created_at %></h4>
+            <h3 style="color:#428bca">Created @ <%= todo_list.created_at %></h3>
           </div>
           <hr>
           <%= link_to "/todo_lists/#{todo_list.id}/todo_items/new", :class=>"add-item" do %>
