@@ -1,5 +1,5 @@
 Hosted Live at http://www.todayslist.net
-![alt tag](https://github.com/Wal33D/ToDo_List/mobile1.png)
-![alt tag](https://github.com/Wal33D/ToDo_List/mobile2.png)
-![alt tag](https://github.com/Wal33D/ToDo_List/desktop.png)
+![alt tag](https://github.com/Wal33D/ToDo_List/blob/master/mobile1.png)
+![alt tag](https://github.com/Wal33D/ToDo_List/blob/master/mobile2.png)
+![alt tag](https://github.com/Wal33D/ToDo_List/blob/master/desktop.png)
 
