@@ -6562,3 +6562,8 @@ a.fa-links:focus {
 h3{
   color:white!important;
 }
+.modal-body{
+  h3{
+  color:black !important;
+  }
+}
