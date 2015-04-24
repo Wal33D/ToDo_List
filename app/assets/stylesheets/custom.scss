@@ -1,17 +1,15 @@
 
 html, .todo, .clear-form, .content, .list, .container{height:100%;}
-.header{
-	margin:0px;
-}
+
+.header{ margin:0px; }
+
 body {
   width:100%;
   height: 100%;
   margin: 0;
   font-family: 'Lato', sans-serif;
 }
-.container{
-	width:90%;
-}
+.container{ width:90%; }
 .block {
    width: 50%;
    float: right;
@@ -304,6 +302,7 @@ horz-blue{
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 0px;
+  font-size:120% !important;
 }
 
 .flash{
@@ -398,20 +397,23 @@ font-size:2.5vmin;
       padding-top:0px;
 
       .block{
-        line-height: 30px;
+        line-height: 42px;
         width:50%;
       }
     }
+
    .container, .content{
       width:100% !important;
       padding:0px !important;
       margin:0px !important;
     }
+
     .item, .list{
       width:100%;
       padding:0px;
       padding-bottom:5px;
     }
+
     .item, .fieldset.scheduler-border{
     border:double 8px #428bca !important; 
 
@@ -423,21 +425,80 @@ font-size:2.5vmin;
 
 }
 fieldset.scheduler-border {
-
-  border: solid #428bca 10px;
-  display: inline-block;
-  height:auto;
-  width:100%;
+    border: solid #428bca 10px;
+    display: inline-block;
+    height:auto;
+    width:100%;
 }
 
 legend.scheduler-border {
-  border:none;
-  width:auto;
-  color:#428bca;
+    border:none;
+    width:auto;
+    color:#428bca;
     font-size: 1.2em !important;
     font-weight: bold !important;
     text-align: left !important;
 }
+
 .not-completed-td{
-  background-color:red !important;
+    background-color:red !important;
+}
+
+h3{
+    color:white!important;  
+
+}
+
+.navbar-toggle:hover{
+     background-color: rgb(255, 255, 255) !important;
+     span{
+        color: rgb(59, 125, 182) !important; 
+     }
+
+}
+
+.navbar-toggle{
+     border:2px solid white !important;  
+}
+
+.navbar-toggle span{
+  -webkit-box-sizing: border-box!important;  
+  -moz-box-sizing: border-box!important;  
+  box-sizing: border-box!important;  
+  padding: 2px!important;  
+  border: none!important;  
+  color: rgb(59, 125, 182) !important; 
+  text-decoration: normal!important;  
+  text-align: center!important;  
+  -o-text-overflow: clip!important;  
+  text-overflow: clip!important;  
+  white-space: pre!important;  
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1)!important;  
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1)!important;  
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1)!important;  
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1)!important;  
+}
+
+.navbar-toggle span:hover{
+     color: rgb(59, 125, 182) !important; 
+}
+
+.navbar-brand{
+     vertical-align: middle !important;
+     line-height:25px !important;
+}
+
+nav a{
+    text-align:center;
+    font-size:140%; 
+}
+.navbar-default{
+  margin-bottom:0xp !important;
+  padding-bottom:0xp !important;
+}
+.addon-red{
+  background-color:rgb(255,0,0) !important; 
+  border:solid rgba(255, 0, 0,0.5) 1.5px !important;
+  color:white !important;
+  font-weight:bold !important;
 }

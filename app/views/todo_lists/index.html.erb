@@ -13,6 +13,7 @@
       <hr id="hr-small">
     </div>
     <div class="list" >
+     <!--Ruby-->
       <% @todo_lists.each do |todo_list| %>
       <% completed = 0 %>
       <% todo_list.todo_items.each do |todo_item| %>
@@ -21,6 +22,8 @@
       <% end %> 
       <% end %>
       <% incomplete = todo_list.todo_items.count - completed %>
+    <!--Ruby End-->
+
       <fieldset class="scheduler-border item">
         <legend class="scheduler-border">
           <h1><%= todo_list.title %></h1>
@@ -28,7 +31,11 @@
         <div class = "infos">
           <div class = "title-description">
             <h3><%= todo_list.description %></h3>
-            <h3 style="color:#428bca">Created @ <%= todo_list.created_at %></h3>
+              <!--Ruby-->
+                <% if todo_list.deadline? %>
+                  <h4 style="color:rgb(255, 0, 0);">Deadline @ <%= todo_list.deadline %></h4>
+                <% end %> 
+              <!--Ruby End-->
           </div>
           <hr>
           <%= link_to "/todo_lists/#{todo_list.id}/todo_items/new", :class=>"add-item" do %>
